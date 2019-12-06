@@ -1,0 +1,93 @@
+
+ <!DOCTYPE html> 
+<html>
+
+ <head>
+      <meta charset="UTF-8" />
+   </head>
+ 
+
+<body>
+
+
+<h1>Bienvenue</h1>
+
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+		</div>	
+
+		<ul *ngIf="!(user|async)" class=" nav navbar-nav">
+			<li> <a class="nav-link active" routerLink="/Users/connexion"> <button>Se Connecter </button>  </a></li>
+
+				<li> <a class="nav-link disabled" routerLink="/produits"> <button> Liste des produits </button>  </a></li> 
+
+			<li> <a class="ajout-membre" routerLink="/users"> <button> Ajouter un Membre</button></a> </li>
+
+			<li> <a class="Rechercher" routerLink="/recherche"> <button> Rechercher des produits par type</button></a> </li>
+			
+			<li> <a class="Rechercher" routerLink="/rechercheparmotscle"> <button> Rechercher des produits par mots-clé</button></a> </li>	
+
+
+		</ul>
+
+		
+			
+		 <ul *ngIf="user|async" class="nav navbar-nav">
+			<li><a class="nav-link active" routerLink="/produits"> <button>Liste des produits</button> </a></li>
+
+			<li> <a class=" nav-link active" (click)="deconnexion()"> <button>Déconnexion de {{user|async}} </button> </a></li>
+
+		
+		
+		</ul>
+		
+
+	<!-- <form>
+			<label class=" nav navbar-nav " >  </label>
+    <input type="text" id="recherche" name="recherche" placeholder="Rechercher..">
+    <input  type="submit"  value="Valider" (click)= rechercherP() routerLink="/recherche">
+	</form> -->
+		
+	</div> 
+
+
+</nav>
+
+<router-outlet></router-outlet> 
+
+
+
+<!-- <!DOCTYPE html> 
+<html>
+
+ <head>
+      <meta charset="UTF-8" />
+   </head>
+ 
+
+<body>
+
+
+	<h1>Bienvenue</h1>
+	
+
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">site de vente</a>
+		</div>	
+
+	<ul *ngIf="!(user|async)" class="nav navbar-nav">
+		<li class=" navbar"><a routerLink="/Users/connexion"><button>Se connecter</button></a></li>
+
+		<li class="navbar"><a class=" disabled" routerLink="/produits"><button>Liste des produis</button></a></li>
+
+		<li *ngIf="user|async"><a class=" active" routerLink="/produits"> Liste des produits</a></li>
+	</ul>
+
+</div>
+</nav>
+
+<router-outlet></router-outlet><!
+ -->

@@ -1,0 +1,47 @@
+<div>
+			<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+	  <link rel="stylesheet" href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+	</head>
+
+	<body>
+
+	
+		<div>
+			<form [formGroup]="newUserForm" (ngSubmit)="ajout()" >
+				 
+				<label> Nom </label>
+				<input type="text" class="from-control"  formControlName="nom" />
+				<div  *ngIf="newUserForm.controls['nom'].invalid && (newUserForm.controls['nom'].dirty || newUserForm.controls['nom'].touched)"></div>
+			
+				
+				<label> Prenom </label>
+				<input type="text" class="from-control"  formControlName="prenom" />
+				<div *ngIf="newUserForm.controls['prenom'].invalid && (newUserForm.controls['prenom'].dirty || newUserForm.controls['prenom'].touched)"></div>
+
+
+				
+				<label> Email </label>
+				<input type="email" class="from-control"  formControlName="email" />
+				<div *ngIf="newUserForm.controls['email'].invalid && (newUserForm.controls['email'].dirty || newUserForm.controls['email'].touched)"></div>
+
+
+				
+				<label> Mot de passe </label>
+				<input type="password" class="from-control"  formControlName="password" />
+				<div *ngIf="newUserForm.controls['password'].invalid && (newUserForm.controls['password'].dirty || newUserForm.controls['password'].touched)"></div>
+				
+				<input type="submit" value="s'inscrire"/>
+			</form>
+		</div>
+		<div>
+		<p>{{message|json}}</p></div>
+
+
+		
+		
+	</body>
+	
+	</html>

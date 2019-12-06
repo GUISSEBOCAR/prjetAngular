@@ -1,0 +1,28 @@
+
+<!DOCTYPE html> 
+<html>
+
+ <head>
+      <meta charset="UTF-8" />
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ </head>
+
+
+<form (ngSubmit)="onSubmit()" #inscriptionForm="ngForm">
+	<label> Email </label>
+	<input type="text" class="form-control" required [(ngModel)]="utilisateur['email']" name="email" />
+
+	
+	<label> Mot de passe </label>
+	<input type="password" class="form-control" required
+		   [(ngModel)]="utilisateur['password']" name="password" />
+
+	<input type="submit" value="Se connecter"/>
+</form>
+<p> MESSAGE DE CONNEXION : {{message}} </p>
+
+
+
+</html>
+
+

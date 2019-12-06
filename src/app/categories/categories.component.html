@@ -1,0 +1,29 @@
+<!DOCTYPE html> 
+<html>
+
+ <head>
+      <meta charset="UTF-8" />
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ </head>
+
+<div *ngIf="!(user|async)">
+	<p class="card-header mx-auto"> Se connecter pour découvrir nos :</p>
+	  <div class="card-body">
+	<div *ngFor="let categorie of categories" class="card">
+		<p class="card-text mx-auto"> {{categorie}}</p>
+	 </div>
+	</div>
+</div>
+
+<div *ngIf="user|async">
+	<div class="card-header">Vous êtes connecté :</div>
+	<div class="card-body">
+		<div *ngFor="let categorie of categories">
+			<p class="card-text mx-auto" > <input type="button" value="Allez vite découvrir nos {{categorie}}"
+	(click)="produitsParCategorie(categorie)"/> </p>
+
+		</div>
+	</div>
+</div>
+
+</html>

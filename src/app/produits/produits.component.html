@@ -1,0 +1,50 @@
+<!DOCTYPE html> 
+<html>
+
+ <head>
+      <meta charset="UTF-8" />
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ </head>
+ 
+<div class=" container"> Liste des produits :
+	<table id="example" class="table table-striped display" style="width: 100%; font-size: 22px"> 
+		<thead>
+			
+		 <!-- "exemple" pour la pagination, et "table table-striped display" pour le design du tableau  -->
+		<tr class="info"> <!-- "info" le script bootstrap utilisé pour la couleur de l'entete du tableau-->
+			<th>Nom</th>
+			<th>Type</th>
+			<th>Prix</th>
+		</tr>
+		</thead> 
+
+		<tbody>
+			<tr *ngFor="let produit of produits">
+				<td>{{produit.nom}}</td>
+				<td>{{produit.type}}</td>
+				<td>{{produit.prix}}</td>
+
+				<td>
+		<div *ngIf="(user|async)"><button> Acheter </button></div>			
+		<!-- <a class="glyphicon glyphicon-plus" value="Ajouter" ></a>&nbsp;&nbsp;&nbsp;
+        <a class="glyphicon glyphicon-trash" value="Supprimer"></a> -->
+    </td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+
+</html>
+
+
+
+<!-- ><div class="row justify-content-center">
+	<div class="card-body">
+	<div *ngFor="let produit of produits" class="card">
+		<div class="card-text mx-auto"> Nom : {{produit['nom']}} : Type : {{produit['type']}} : prix  {{produit['prix']}}Euro.
+			<div *ngIf ="(user|async)"> <button> merci d'acheter </button></div>
+			</div>
+		</div>
+	</div>
+</div><! -->

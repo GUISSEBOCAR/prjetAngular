@@ -1,0 +1,54 @@
+<p>rech works!</p>
+
+
+<!DOCTYPE html> 
+<html>
+<head>
+      <meta charset="UTF-8" />
+	  <link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ </head>
+ 
+
+
+
+<body>
+
+  <label> <h1> Recherche par bien : <input type="text" style="width: 200px; height: 30px;" [(ngModel)]="nomBienP">{{nomBienP}} </h1></label> 
+   
+  <button class = "cherche" (click) = "chercher()">Valider</button>
+  <div class="container" style="color:blue;" *ngFor = "let recherche of produits">
+  <h3> Le produits est :
+
+	<table id="example" class="table table-striped display" style="width:100% ; font-size: 22px">
+	<thead>                <!-- "exemple" pour la pagination, et "table table-striped display" pour le design du tableau  -->
+	<tr class="info">  <!-- "info" le script bootstrap utilisé pour la couleur de l'entete du tableau-->
+		<th>Nom</th>
+		<th>tType</th>
+		<th>Prix</th>
+		
+	</tr>
+	</thead>
+
+	<tbody>
+	<tr>
+		<td>{{recherche.nom}}</td>
+		<td>{{recherche.type}}</td>
+		<td>{{recherche.prix}}</td>
+		<td>
+		<img src="{{recherche.photo}}">
+		</td>
+	</tr>
+	</tbody>
+
+	</table>
+  
+	</h3>
+
+  </div>
+  
+
+</body>
+</html>
+
+
+

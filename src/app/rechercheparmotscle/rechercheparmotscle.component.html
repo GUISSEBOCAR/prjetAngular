@@ -1,0 +1,9 @@
+<p>Rechercher vos produits </p>
+
+<label> <h1> Recherche par bien : <input type="text" style="width: 200px; height: 30px;" [(ngModel)]="parametres">{{parametres}} </h1></label> 
+   
+  <button class = "cherche" (click) = "rechercherParMc()">Valider</button>
+  <div class="container" style="color:blue;" *ngFor = "let recherche of produits">
+<div> {{recherche.type}} {{recherche.prix}}</div>
+	
+
